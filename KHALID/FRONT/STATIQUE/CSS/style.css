@@ -1,0 +1,88 @@
+li 
+    {   
+    display : inline
+    }
+
+a
+    {   
+    color: white;
+    }
+
+.colonne
+    {
+    height : 500px; 
+    width: 400px;    
+    background-color: gray;
+    float :right;
+    order: 1;
+    }
+
+.colonne1
+    {
+    height : 750px; 
+    width: 800px;    
+    background-color: grey;
+    float: right;
+    order: 1;
+    }   
+
+.colonne2
+    {
+    height : 510px; 
+    width: 400px;    
+    background-color: gray;
+    float: right;
+    order: 1;
+    }
+.COLONNEDROITE
+    {
+    display:flex;
+    }   
+
+.bandeau 
+    {   
+    background-color : black;
+    padding: 20px;
+    margin-bottom: 20px;
+    }
+
+.bandeau2
+    {
+    background-color : black;
+    padding: 5px;
+    margin-bottom: 5px;
+    }
+.centrage
+
+    { 
+    display: flex;
+    }
+
+.slogan
+    {
+    margin-left: auto;
+    margin-right : auto;
+    font-size : 30px
+    }
+
+@media screen and (max-width: 768px)
+{
+
+.body
+{
+font-size: 1.2rem;
+
+}
+
+
+.lien
+    {   display: flex ;
+    flex-direction: column;
+    }
+ 
+.colonne
+    {
+        display: none;
+    }
+
+}

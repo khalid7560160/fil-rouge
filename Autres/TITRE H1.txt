@@ -1,0 +1,6 @@
+<h1>Titre H1 tres important </h1>
+<h2>Titre H2 moins important que H1</h2>
+<h3>titre H3 moins important que H2</h3>
+<h4>Titre H4 moins important que H3</h4>
+<h5>Titre H5 moins important que H4</h5>
+<h6>Titre H6 moins important que H5</h6>
