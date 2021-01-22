@@ -18,45 +18,35 @@
 // Declaration des variables
 
 var PU
-var QTECOM 
-var PAP 
-var REM 
-var PORT 
+var QTECOM
+var PAP
+var REM
+var PORT
 var TOT
 // Entrer le prix  
-PU=parseInt(prompt("entrez le prix de l article"));
+PU=parseINT(prompt("entrez le prix de l'article"));
  
 // Nombre d'article
-QTECOM=parseInt(prompt("entrer le nombre d article commandés"));
+QTECOM=parseInt(prompt(" entrer le nombre d'article commandés"));
 
-//Calcul du prix 
+//Calcul du prix final 
 TOT=( PU * QTECOM)
 
-//Prix remisé
-
-
-
-
-    if(PU>500)  
+    if(TOT>500)  
             //frais de port gratuit
         {   PORT=0
         }  
 
-    
-        else if(PU<=500)
+        else if(TOT<=500)
             // frais de port payant    
         {
             PORT=Math.max(6,TOT*(2/100));
-        }   
-    
-              
+        }     
     if(TOT>200)    
              //remise de 10% 
         {
-            REM=TOT*(10/100) ;
+            REM=TOT*(10/100)
         }
-        
-    
         else if(TOT<=200 && TOT>=100)
             //remise de 5%
         { 
@@ -72,7 +62,7 @@ TOT=( PU * QTECOM)
 PAP=((TOT+PORT)-REM); 
 alert("somme "+ TOT);
 alert("frais de port "+ PORT);
-alert("remise sur 10% " + REM);
+alert("resmise sur achat " + REM);
 alert("le prix a payer est "+ PAP);
 
 
