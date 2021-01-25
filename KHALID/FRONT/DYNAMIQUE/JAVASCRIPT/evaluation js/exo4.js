@@ -15,58 +15,38 @@
 // Saisir 3 € et quantité = 1 : remise 0, frais de port 2% soit 0.06 € donc le minimum de 6 € s'applique; à payer : 3+6 = 9 €
 
 
-// Declaration des variables
 
-var PU
-var QTECOM
-var PAP
-var REM
-var PORT
-var TOT
-// Entrer le prix  
-PU=parseINT(prompt("entrez le prix de l'article"));
- 
-// Nombre d'article
-QTECOM=parseInt(prompt(" entrer le nombre d'article commandés"));
-
-//Calcul du prix final 
-TOT=( PU * QTECOM)
-
-    if(TOT>500)  
-            //frais de port gratuit
-        {   PORT=0
-        }  
-
-        else if(TOT<=500)
-            // frais de port payant    
-        {
-            PORT=Math.max(6,TOT*(2/100));
-        }     
-    if(TOT>200)    
-             //remise de 10% 
-        {
-            REM=TOT*(10/100)
-        }
-        else if(TOT<=200 && TOT>=100)
-            //remise de 5%
-        { 
-            REM=TOT*(5/100);
-        }
-        else
-            //  pas de remise
-        {
-            REM=0;
-        }
-
-// Prix payé par le client 
-PAP=((TOT+PORT)-REM); 
-alert("somme "+ TOT);
-alert("frais de port "+ PORT);
-alert("resmise sur achat " + REM);
-alert("le prix a payer est "+ PAP);
-
-
-
-
-
-
+var PU = window.prompt("Entrer le prix unitaire du produit");
+ var QTECOM = window.prompt("Entrer la quantité de la commande"); 
+ var TOT = PU*QTECOM; 
+ var TOT2;
+  var TOT3; 
+  // Remise possible 
+  if (TOT <= 200 && TOT >= 100)
+    { 
+       TOT2 = TOT*0.95;
+    }
+   else if
+    (TOT>200) 
+    {
+         TOT2 = TOT*0.9;
+    } 
+   else 
+   { TOT2 = TOT; 
+    };
+    // Frais de port
+     if (TOT2>500)
+      {
+           TOT3 = TOT2;
+     } 
+    else
+     { 
+        TOT3 = TOT2*1.02;
+         if
+     (
+              TOT3 < TOT2 + 6) 
+         { 
+             TOT3 = TOT2 + 6; 
+        };
+        };
+          alert("Le prix à payer sera de " + TOT3 + "€.");

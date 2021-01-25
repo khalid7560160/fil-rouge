@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   
-    
+    <title>Formulaire</title>
 </head>
+
 
 <body>
     <div class="container-fluid">     
@@ -22,14 +22,14 @@
     </div>
     <div class="col-4">
 
-<p>  
+
 
 <blockquote class="blockquote text-right">
 
 <p class="h1">Tout le jardin</p>
 
 </blockquote>         
-</p>
+
     </div>  
     </div>    
 
@@ -59,7 +59,7 @@
             </li>
         </ul>
 <form class="form-inline my-2 my-lg-0">
-<input class="form-control mr-sm-2" type="Votre promotion" placeholder="Votre promotion" aria-label="Votre promotion">
+<input class="form-control mr-sm-2" type="text" placeholder="Votre promotion" aria-label="Votre promotion">
 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
 
 </form>  
@@ -71,141 +71,123 @@
 
 </header>
 
-<p>*Ces zones sont obligatoires</p>
-<form>
-    <script type="text/javascript">
-       
-        function testInput(Votrenom)
-        {
-         var exp = new RegExp("^[a-zA-Z]*$","g");
-         var data = document.getElementById("idText").value;
-         alert(exp.test(data));
-         
-        }
-        
-        </script>
-<fieldset>
-<strong>   <legend> Vos coordonnées</legend> </strong>
-
-<label for="Votrenom*">Votre nom*:</label><br>
-
-
-<input type="Votre nom*" class="form-control" placeholder="Veillez saisir votre nom" maxlength="20" pattern="a-z" required>
-
-
-
-
-<label for="Votreprénom*">Votre prénom*:</label> <br>
-
-
-<input type="Votre prénom*" class="form-control" placeholder="Veuillez saisir votre prénom" maxlength="20" pattern="a-z" required>
-
-
-<label for="Sexe*">Sexe*</label> <id="Sexe*"> <br>
-<input type="radio" name="Sexe*" value="Femme" > Féminin
-<input type="radio" name="Sexe*" value="Homme" > Masculin 
-<input type="radio" name="Sexe*" value="Neutre" > Neutre 
-<br>
-
-<label for="Datedenaissance*">Date de naissance*:</label><br>
-<input type="date" class="form-control" >  <br>
-
-<label for="Codepostal*">Code postal*:</label><br>
-<input type="codepostal" class="form-control" maxlength="5" pattern="[0-9]{5}" required><br>
-
-<label for="Adresse">Adresse:</label><br>
-<input type="Adresse" class="form-control" > <br>
-
-<label for="Ville">Ville:</label><br>
-<input type="Ville" class="form-control" > <br>
-
-<label for="Email*">Email*:</label><br>
-<input type="Email" class="form-control" placeholder="dave.loper@afpa.fr" aria-label="dave.loper@afpa.fr" aria-describedby="basic-addon1"    >
-<br>
-</fieldset>    
-
-<fieldset>
-
-<strong>   <legend> Votre demande</legend></strong>
-
-<label>Sujet*:</label>     
-
-
-
-
-
-   
- 
-        <select class="form-control">Veuillez selectionner un sujet
-       
+<div class="row">
+    <div class="col-12">
+        <form action="http://bienvu.net/script.php" method="POST"  id="formulaire_contact">
             
-        
-            <option selected>Veuillez selectionner un sujet</option>
-            <option value="1">Mes commandes</option>
-            <option value="2">Questions sur un produit</option>
-            <option value="3">Réclamation</option>
-            <option value="4">Autres</option>
-          </select>
+                <h1>Vos coordonnées</h1>
+
+                <div class="form-group">
+                    <label for="name">Nom*</label>
+                    <input type="text" class="form-control" id="nom" name="Nom" placeholder="Veuillez saisir votre nom">
+                    <div id="erreurName" class="Erreur"></div>
+            
+                    <label for="name">Prénom*</label>
+                    <input type="text" class="form-control" id="prenom" name="Prenom" placeholder="Veuillez saisir votre prenom">
+                    <div id="erreurPrenom" class="Erreur"></div>
+                </div>
                 
-<br>
+                <label>Sexe*</label>
+                <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Féminin">
+                    <label class="form-check-label" id="feminin">Féminin</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Masculin">
+                    <label class="form-check-label" id="masculin">Masculin</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Neutre">
+                    <label class="form-check-label" id="neutre">Neutre</label>
+                </div>
+                    <div id="erreurSexe" class="Erreur"></div>
+                </div>
 
+                <div class="form-group">      
+                    <label for="date">Date de naissance*</label>
+                    <input type="date" class="form-control" name="birth" id="date">        
+                    <div id="erreurDate" class="Erreur"></div>
+                </div>
 
-     <label>Votre question* :</label><textarea></textarea> 
-<input type="Votre question" class="form-control" >
+                <div class="form-group">
+                    <label for="code">Code Postal*</label>
+                    <input id="codepostal" type="cp" class="form-control" name="cp">
+                    <div id="erreurCP" class="Erreur"></div>
 
+                    <label for="adresse">Adresse</label>
+                    <input type="adresse" class="form-control" name="adresse" id="adresse">
+                    <div id="erreurAdr" class="Erreur"></div>
 
+                    <label for="city">Ville</label>
+                    <input id="ville" type="text" class="form-control" name="ville">
+                    <div id="erreurVille" class="Erreur"></div>
 
-</fieldset>     
-<br>
-<input type="checkbox" >
-<label for="nom">*J'accepte le traitement informatique de ce formulaire :</label> <id="nom"> 
+                    <label for="courriel">Email*</label>
+                    <input type="mail" class="form-control" name="courriel" id ="mail">
+                    <div id="erreurMail" class="Erreur"></div>
+                </div>
 
-<br>
-<br>
-<button type="button" class="btn btn-dark"> Envoyer</button>
-<button type="button" class="btn btn-dark"> Annuler</button> 
+                <h1>Votre demande</h1>
 
+                <div class="form-group">
+                    <label for="sujet">Sujet*</label>
+                    <select class="form-control" name="sujet" id="sujet">
+                        <option value="1">Veuillez séléctionner un sujet</option>
+                        <option value="2">Mes commandes</option>
+                        <option value="3">Question sur un produit</option>
+                        <option value="4">Réclamation</option>
+                        <option value="5">Autres</option>           
+                    </select>
+                    <div id="erreurSujet" class="Erreur"></div> 
 
-</form>
+                    <label for="question">Votre question*</label>
+                    <div class="input-group" >
+                    <textarea class="form-control" id="question" aria-label="With textarea"></textarea>
+                    </div> 
+                    <div id="erreurQuest" class="Erreur"></div>   
+                    <br>
 
-<footer>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="form-check-input" id="accept">
+                        J'accepte le traitement informatique de ce formulaire.<br>
+                        <div id="erreurAccept" class="Erreur"></div>
+                    </div>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark my-2">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-</button>   
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
+                    <button id="envoie" type="submit" class="btn btn-dark">Envoyer</button>
+                    <button type="reset" class="btn btn-dark">Annuler</button>
+                </div>
+    </form>
+    <footer>
     
-             <li class="nav-item">
-        <a class="nav-link" href="mentionslégales.php">Mentions légales</a>
-            </li>
-            <li class="nav-item">
-        <a class="nav-link" href="horaires.php">horaires</a>
-            </li>
-            <li class="nav-item">
-        <a class="nav-link" href="plandusite.php">plan du site</a>
-            </li>
-    </ul>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark my-2">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+            </button>   
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                    
+                             <li class="nav-item">
+                        <a class="nav-link" href="mentionslégales.php">Mentions légales</a>
+                            </li>
+                            <li class="nav-item">
+                        <a class="nav-link" href="horaires.php">horaires</a>
+                            </li>
+                            <li class="nav-item">
+                        <a class="nav-link" href="plandusite.php">plan du site</a>
+                            </li>
+                    </ul>
+                    </div>
+    </nav>
+      
+    </footer>
     </div>
-</nav>
-</nav>
-</footer>
-
-</div>
-
-
-<script src="exo41.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+    </div>
+    </div>
+    <script src="exo5.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    </body>
+    </html>

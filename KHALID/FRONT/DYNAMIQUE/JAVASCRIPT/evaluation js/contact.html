@@ -23,14 +23,15 @@
 
 <p>  
 
+
         <blockquote class="blockquote text-right">
 
 <p class="h1">Tout le jardin</p>
-
+<div class="clo-4"></div>
         </blockquote>         
 </p>
-                </div>  
-                </div>    
+                </div> 
+        </div>   
 
 <header>
 
@@ -69,94 +70,117 @@
         
 
 </header>
+
+<div class="row">
+                <div class="col-12">
+
   
     <p>*Ces zones sont obligatoires</p>
-    <form>
-        <form method="post" action="traitement.php">
+    
+        <form action="http://bienvu.net/script.php" method="POST"  id="formulaire_contact">
+
         <fieldset>
          <strong>   <legend> Vos coordonnées</legend> </strong>
 
-         <label for="Votrenom*">Votre nom*:</label><br>
-         
-            
-            <input type="Votre nom*" class="form-control" placeholder="Veillez saisir votre nom" pattern="a-z" >
-          
+         <div class="form-group">
 
 
-           
-            <label for="Votreprénom*">Votre prénom*:</label> <br>
-            
-            
-            <input type="Votre prénom*" class="form-control" placeholder="Veuillez saisir votre prénom" pattern="a-z" >
-            
-            
-            <label for="Sexe*">Sexe*</label> <id="Sexe*"> <br>
-            <input type="radio" name="Sexe*" value="Femme" > Féminin
-            <input type="radio" name="Sexe*" value="Homme" > Masculin 
-            <input type="radio" name="Sexe*" value="Neutre" > Neutre 
-            <br>
-            
-            <label for="Datedenaissance*">Date de naissance*:</label><br>
-            <input type="date" class="form-control" >  <br>
-           
-            <label for="Codepostal*">Code postal*:</label><br>
-            <input type="codepostal" class="form-control" maxlength="5" ><br>
-           
-            <label for="Adresse">Adresse:</label><br>
-            <input type="Adresse" class="form-control" > <br>
+        <label for="name">Nom*:</label><br>
+        <input type="text" class="form-control" id="nom" name="Nom" placeholder="Veillez saisir votre nom" pattern="a-z" >
+        <div id="erreurName" class="Erreur"></div>
+        
+        
+        
+        <label for="name">Prénom*:</label> <br>
+        <input type="text" class="form-control" id="prénom" name="Prénom"placeholder="Veuillez saisir votre prénom" pattern="a-z" >
+        <div id="erreurPrénom" class="Erreur"></div>
+           </div> 
+
+        <label>Sexe*:</label> 
+        
+                
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Féminin">
+        <label class="form-check-label" id="feminin">Féminin</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Masculin">             
+        <label class="form-check-label" id="Masculin">Masculin</label>    
+        </div>       
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Neutre">
+        <label class="form-check-label" id="Masculin">Neutre</label> 
+        </div> 
+        </div>
+                <div id="erreurSexe" class="Erreur"></div>
+             
+
+            <label for="name*">Date de naissance*:</label><br>
+            <input type="date" class="form-control" name="birth" id="date"> 
+            <div id="erreurDate" class="Erreur"></div>
+        
+             
+        <label for="Code">Code postal*:</label>
+        <input type="codepostal" class="form-control" name="cp" place holder="Code postal" maxlength="5">
+        <div id="erreurcodepostal" class="Erreur"></div>
+
+
+        <label for="Adresse">Adresse:</label><br>
+        <input type="Adresse" class="form-control" name="Adresse" place holder="Adresse">
+        <div id="erreurAdresse" class="Erreur"></div>
           
-            <label for="Ville">Ville:</label><br>
-            <input type="Ville" class="form-control" > <br>
-            
-            <label for="Email*">Email*:</label><br>
-            <input type="Email" class="form-control" placeholder="dave.loper@afpa.fr" aria-label="dave.loper@afpa.fr" aria-describedby="basic-addon1"    >
-            <br>
+        <label for="Ville">Ville:</label><br>
+        <input type="Ville" class="form-control"name="Ville" place holder="Ville" > 
+        <div id="erreurVille" class="Erreur"></div>   
+
+
+        <label for="Email*">Email*:</label><br>
+        <input type="Email" class="form-control" name="Email" placeholder="dave.loper@afpa.fr" aria-label="dave.loper@afpa.fr" aria-describedby="basic-addon1">
+        <div id="erreurEmail" class="Erreur"></div> 
+        </div>
+        <br>
         </fieldset>    
 
     <fieldset>
    
      <strong>   <legend> Votre demande</legend></strong>
      
-            <label>Sujet*:</label>     
-       
             
-
-            
-            
-               
-             
-                    <select class="form-control">Veuillez selectionner un sujet
-                   
-                        
-                    
+                <label>Sujet*:</label>  
+                
+                <select class="form-control" name="sujet" id="sujet">             
                         <option selected>Veuillez selectionner un sujet</option>
                         <option value="1">Mes commandes</option>
                         <option value="2">Questions sur un produit</option>
                         <option value="3">Réclamation</option>
                         <option value="4">Autres</option>
                       </select>
-                            
+           <div id="erreurSujet" class="Erreur"></div>       
     <br>
             
         
-                 <label>Votre question* :</label><textarea></textarea> 
+                 <label>Votre question* :</label>
             <input type="Votre question" class="form-control" >
-            
+            <div class="input-group" >
+                        <textarea class="form-control" id="question" aria-label="With textarea"></textarea>
+                        </div> 
+                        <div id="erreurQuest" class="Erreur"></div>   
+                        <br>
             
             
     </fieldset>     
 <br>
-        <input type="checkbox"  id="case" onclick="condition () ">
+        <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="form-check-input" id="case" onclick="condition () ">
         
-        <label for="nom">*J'accepte le traitement informatique de ce formulaire :</label> <id="nom"> 
-            
-        <br>
-         <br>
-         <button type="button" class="btn btn-dark"> Envoyer</button>
-         <button type="button" class="btn btn-dark"> Annuler</button> 
-        
-   
-</form>aaaa
+        <label for="nom">*J'accepte le traitement informatique de ce formulaire :</label> 
+                <div id="erreurAccept" class="Erreur"></div>
+        <br><br>
+         <button  id="envoi" type="button" class="btn btn-dark"> Envoyer</button>
+         <button type="reset" class="btn btn-dark"> Annuler</button> 
+        <div id
+   </div>
+</form>
 
 <footer>
     
@@ -183,7 +207,7 @@
 </footer>
 
 </div>
-<script src="veriformulaire.js"></script>
+<script src="exo5.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
