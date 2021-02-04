@@ -7,7 +7,7 @@
 
 // Donnez le programme Javascript correspondant qui affiche les résultats.
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 var count = 1
@@ -26,7 +26,7 @@ if (age < 20 && age > 0)
 {
     jeunes++;
 }
-else if (age >40 && age <= 100)
+else if (age >40 && age < 100)
 {
     vieux++;
 }
@@ -35,7 +35,7 @@ else if (age>=20 && age<= 40)
 
     moyens++;
 }
-else if (age > 100)
+else if (age => 100)
 {
     centenaire++;
 

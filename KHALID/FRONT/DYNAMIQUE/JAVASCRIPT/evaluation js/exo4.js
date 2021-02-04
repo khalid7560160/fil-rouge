@@ -14,7 +14,7 @@
 // Saisir 100 € et quantité = 2 : 200 € donc remise 5% soit 190 € et frais de port 2% soit 3,8 € mini 6 €; à payer : 190+6 = 196 €
 // Saisir 3 € et quantité = 1 : remise 0, frais de port 2% soit 0.06 € donc le minimum de 6 € s'applique; à payer : 3+6 = 9 €
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var PU = window.prompt("Entrer le prix unitaire du produit");
  var QTECOM = window.prompt("Entrer la quantité de la commande"); 
