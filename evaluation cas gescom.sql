@@ -96,16 +96,18 @@ order by ord_order_date DESC
 
 --Q17. Afficher les coordonnées des fournisseurs pour lesquels des commandes ont été passées.
 
-SELECT sup_name,sup_contact,sup_phone,sup_mail,ord_order_date
-FROM suppliers, orders
-WHERE ord_order_date
-limit 5
+SELECT distinct sup_name,sup_contact,sup_phone,sup_mail
+FROM orders_details
+JOIN products on ode_pro_id = pro_id 
+JOIN suppliers on pro_sup_id = sup_id
+
 
 --Q18. Quel est le chiffre d'affaires de 2020 ?
 
-SELECT ord_cus_id, sum(ode_unit_price * ode_quantity)
-FROM orders, orders_details
-WHERE ode_ord_id = ode_pro_id and year(ord_order_date)=2020
+SELECT sum(ode_unit_price * ode_quantity)
+FROM orders_details
+join orders on ord_id = ode_ord_id
+WHERE year(ord_order_date)=2020
 
 --Q19. Quel est le panier moyen ?
 
@@ -115,11 +117,11 @@ WHERE
 
 --Q20. Lister le total de chaque commande par total décroissant (Afficher numéro de commande, date, total et nom du client).
 
-SELECT
+SELECT cus_lastname,cus_firstname
 FROM
 WHERE
 
-ORDER BY DESC 
+ORDER BY         DESC 
 
 --Les besoins de mise à jour
 --Q22. La version 2020 du produit barb004 s'appelle désormais Camper et, bonne nouvelle, son prix subit une baisse de 10%.
