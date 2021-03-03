@@ -7,15 +7,10 @@ WHERE emp_children >= '1'
 ORDER BY  emp_children DESC
 
 --Q2. Y-a-t-il des clients étrangers ? Afficher leur nom, prénom et pays de résidence.
-**********
-SELECT cus_lastname,cus_firstname,cus_countries_id
-FROM customers
-WHERE cus_countries_id
-
 
 SELECT cus_lastname,cus_firstname
 FROM customers
-WHERE cus_countries_id >=1 NOT IN -- sous-requete ici : 
+WHERE cus_countries_id NOT IN -- sous-requete ici : 
 (SELECT cus_countries_id FROM countries WHERE  cus_countries_id = 'FR')
 
 --Q3. Afficher par ordre alphabétique les villes de résidence des clients ainsi que le code (ou le nom) du pays.
@@ -59,10 +54,10 @@ JOIN CUSTOMERS ON ord_cus_id = cus_id
 WHERE pro_name = 'Pikatchien'
 
 --Q9. Afficher le catalogue des produits par catégorie, le nom des produits et de la catégorie doivent être affichés.
-
 SELECT cat_id,cat_name,pro_name
-FROM categories,products
-WHERE
+FROM products
+JOIN categories ON pro_id = cat_id
+ORDER BY cat_name ASC
 
 --Q10. Afficher l'organigramme hiérarchique (nom et prénom et poste des employés) du magasin de Compiègne, classer par ordre alphabétique. Afficher le nom et prénom des employés, éventuellement le poste (si vous y parvenez).
 **********
@@ -104,27 +99,13 @@ order by ord_order_date DESC
 SELECT sup_name,sup_contact,sup_phone,sup_mail,ord_order_date
 FROM suppliers, orders
 WHERE ord_order_date
+limit 5
 
 --Q18. Quel est le chiffre d'affaires de 2020 ?
 
-SELECT sum(ode_unit_price * ode_quantity)
-FROM orders_details,orders
-WHERE (ord_order_date)= 2020
-FROM 
-WHERE
-
-
---Afficher le CA de l’année 1994 pour les clients qui n’ont rien commandé en 1995
-
---SELECT co.Code_client, sum(dc.Prix_unitaire * Quantite)
---FROM Commandes co, Details_commandes dc
---WHERE co.N_commande=dc.N_commandeand year(Date_commande)=1994and co.Code_client not in (SELECT co.Code_client
---FROM Commandes co, Details_commandes dc
---WHERE co.N_commande=dc.N_commandeand year(Date_commande)=1995
---GROUP BY co.Code_client )
---GROUP BY co.Code_client
-
-
+SELECT ord_cus_id, sum(ode_unit_price * ode_quantity)
+FROM orders, orders_details
+WHERE ode_ord_id = ode_pro_id and year(ord_order_date)=2020
 
 --Q19. Quel est le panier moyen ?
 
@@ -137,6 +118,8 @@ WHERE
 SELECT
 FROM
 WHERE
+
+ORDER BY DESC 
 
 --Les besoins de mise à jour
 --Q22. La version 2020 du produit barb004 s'appelle désormais Camper et, bonne nouvelle, son prix subit une baisse de 10%.
