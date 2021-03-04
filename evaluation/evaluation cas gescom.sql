@@ -111,24 +111,14 @@ WHERE year(ord_order_date)=2020
 
 --Q19. Quel est le panier moyen ?
 
-SELECT sum (ode_unit_price - (ode_unit_price * ode_discount/100) * ode_quantity)
-FROM orders_details
-GROUP by ode_ord_id
-
-
-SELECT img_id, ROUND(AVG(note_note), 0) AS moyenne, img_id
-FROM images
-LEFT JOIN membres ON img_membre_id = membre_id
-LEFT JOIN notes ON img_id  = note_img_id
-WHERE membre_active = '1'
-GROUP BY img_id
-
+SELECT
+FROM
+WHERE
 
 --Q20. Lister le total de chaque commande par total décroissant (Afficher numéro de commande, date, total et nom du client).
 
-SELECT ord_id,cus_lastname,ord_order_date
-FROM orders,customers
-JOIN 
+SELECT cus_lastname,cus_firstname
+FROM
 WHERE
 
 ORDER BY         DESC 
@@ -137,12 +127,9 @@ ORDER BY         DESC
 --Q22. La version 2020 du produit barb004 s'appelle désormais Camper et, bonne nouvelle, son prix subit une baisse de 10%.
 
 --=> produit 12, prix d'origine = 100 €, le prix après réduction doit être de 90 €.
-
-SELECT pro_id,ode_unit_price,ode_discount,SUM(ode_unit_price * ode_quantity * (1 - 10/100)) as "Montant avec réduction"
-FROM products,orders_details
-JOIN orders_details on ode_pro_id = pro_id
-WHERE 
-
+SELECT
+FROM
+WHERE
 --Q23. L'inflation en France en 2019 a été de 1,1%, appliquer cette augmentation à la gamme de parasols.
 
 --=> les produits 25 à 27 sont concernés. Prix d'origine du produit 25 : 100 €, prix après augmentation : 101,10 €.
